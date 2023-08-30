@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)"
+ >
+
+<head>
+	<meta charset="UTF-8" />
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title th:text="${title}"></title>
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="../css/fontawesome.css">
+	<link rel="stylesheet" href="../css/templatemo-grad-school.css">
+	<link rel="stylesheet" href="../css/owl.css">
+	<link rel="stylesheet" href="../css/lightbox.css">
+	<link rel="stylesheet" href="/css/style.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.js"
+		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+	<!-- font awesome cdn link  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous"></script>
+	<!-- custom css file link  -->
+	<link rel="stylesheet" href="/css/style.css">
+	<script src="/js/script1.js"></script>
+</head>
+<body>
+<section>
+				<div class="cardy">
+
+					<div class="card-body">
+
+						<h1 class="text-center">Update Your Courses Here</h1>
+
+						<div class="container-fluid mt-1">
+
+							<div class="col-md-10 offset-md-1">
+
+								<div class="row">
+
+									<form action="#"  th:object="${contact}" enctype="multipart/form-data" method="POST"
+									th:action="@{/user/process-update}"
+									class="mt-2">
+
+										<!-- first name -->
+                                 <input type="text" th:value="${courses.cid}" name="cid" />
+
+
+								</div>
+
+
+							</div>
+							<div class="input-group flex-nowrap">
+								<span class="input-group-text mr-3" id="addon-wrapping"><i
+										class="fas fa-user"></i></span>
+								<input type="text" th:value="${courses.tname}" name="coursetitlename" class="form-control" placeholder="Enter Your Name Here"
+									aria-label="Username" aria-describedby="addon-wrapping"
+									style="font-size: 2rem;    border: 2px solid black" required />
+							</div>
+
+							<div class="input-group mt-3">
+								<span class="input-group-text mr-3" id="addon-wrapping"><i
+										class="fas fa-plus"></i></span>
+								<input type="text" th:value="${courses.cname}" class="form-control" aria-describedby="emailHelp" name="coursename"
+									placeholder="Enter Course Name Here"
+									style="font-size: 2rem;    border: 2px solid black" required />
+
+							</div>
+
+
+
+							<div class="form-check" style="
+    font-size: 2rem;
+">
+								<fieldset class="row mb-3" name="level" required>
+									<label for="gender" class="col-form-label col-sm-2 pt-0">Level:</label>
+									<div class="col-sm-10">
+										<div class="form-check">
+											<input id="Beginner" th:value="${courses.level}" name="courselevel" type="radio" value="Beginner"
+												checked="checked" /><label for="flexRadioDefault1">Beginners</label>
+
+										</div>
+										<div class="form-check">
+											<input id="Intermediate"  th:value="${courses.level}" name="courselevel" type="radio" value="Intermediate"
+												checked="checked" /><label for="flexRadioDefault2">Intermediate</label>
+
+										</div>
+										<div class="form-check">
+											<input id="Advanced" th:value="${courses.level}" name="courselevel" type="radio" value="Advanced"
+												checked="checked" /><label for="flexRadioDefault2">Advanced</label>
+
+										</div>
+								</fieldset>
+							</div>
+
+							<div class="input-group mt-3">
+								<span class="input-group-text mr-3" id="addon-wrapping"><i class='fa fa-calendar'></i>
+
+								</span>
+								<input type="text" th:value="${courses.date}" class="form-control" id="date" name="coursedate"
+									placeholder="Enter the date " style="font-size: 2rem;     border: 2px solid black"
+									required />
+
+							</div>
+                  
+
+							<div class="input-group mt-3">
+
+								<textarea class="form-control" th:text="${courses.cdescription}" name="coursedescription" rows="5" style="
+    font-size: 2rem;border: 2px solid black" placeholder="Write your query" required /></textarea>
+							</div>
+							   <!--Courses Image-->
+							<div class="container ">
+							<img src="" style="width:250px;height:250px;" class="img-fluid my_profile_picture mt-3" th:src="@{'/img/'+${courses.cimage}}" alt="profile photo" />
+							</div>
+							
+<p >Choose new profile picture</p>
+							<div class="custom-file mt-3">
+								<input type="file" name="courseimage" accept="image/*" />
+							</div>
+
+			<!--Video -->
+			
+			<p >Choose new video</p>
+							<div class="custom-file mt-3">
+								<input type="file" name="coursevideo" accept="video/*"/>
+							</div>
+			<!--PDF-->
+			<div class="container">
+			<a href="#" style="text-decoration: none" th:href="@{'/user/'+${courses.cid}+'/course/'}"><span th:text="${courses.pdf}"></span></a>
+			</div>
+
+							<div class="custom-file mt-3">
+								<input type="file" name="coursepdf" accept=".pdf"/>
+							</div>
+
+							<div class="container text-center">
+
+								<button class="btn btn-outline-primary mt-3 on-click">Submit</button>
+
+							</div>
+
+							</form>
+
+						</div>
+
+					</div>
+
+
+				</div>
+</section>
+</body>
+</html>     

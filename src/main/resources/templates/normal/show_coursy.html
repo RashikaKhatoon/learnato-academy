@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)"
+ >
+ <link rel="stylesheet" href="/css/style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js" integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Show Courses</title>
+</head>
+<body>
+<section>
+<div class="card mr-3 ml-3">
+<div class="card-body">
+<h1 class="text-center">Your Courses</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Course Name</th>
+      <th scope="col">Teacher Name</th>
+      <th scope="col">Level</th>
+      <th scope="col">Course Image</th>
+     
+      <th scope="col">Date</th>    
+      
+     
+      
+<th scope="col">Enrollment</th>
+                
+    </tr>
+  </thead>
+  <tbody>
+      <tr >
+<th scope="row" >LA301</td>
+      <td >Perl</td>
+      <td >Derek Banas</td>
+      <td >Beginner</td>
+      <td><img src="" th:src="@{'/img/perl.png'}" class="my_profile_picture" ></td>
+   <!--   <td><video width="350" height="250" controls><source src="" th:src="@{'/img/yog.mp4'}" / >Mark</td>-->
+ <!--     <td><video width="350" height="250" controls><source src="" th:src="@{'/img/yog.mp4'}" / >Mark</td>-->
+ 
+  
+      <td >30/04/2023</td>      
+
+
+     
+      <td><a href="Perl.html"  class="btn btn-success btn-sm">Enroll Here</a>
+
+
+
+</td>
+    </tr>
+     </thead>
+  <tbody>
+      <tr >
+<th scope="row" >LA302</td>
+      <td >Ruby</td>
+      <td >Raghav Pal</td>
+      <td >Beginner</td>
+      <td><img src="" th:src="@{'/img/ruby.jpg'}" class="my_profile_picture" ></td>
+   <!--   <td><video width="350" height="250" controls><source src="" th:src="@{'/img/yog.mp4'}" / >Mark</td>-->
+ <!--     <td><video width="350" height="250" controls><source src="" th:src="@{'/img/yog.mp4'}" / >Mark</td>-->
+ 
+  
+      <td >28/04/2023</td>      
+
+
+     
+      <td><a href="Ruby.html"  class="btn btn-success btn-sm">Enroll Here</a>
+
+
+
+</td>
+    </tr>
+     </thead>
+  <tbody>
+    <tbody>
+      <tr >
+<th scope="row" >LA303</td>
+      <td >Python</td>
+      <td >Mosh Hamedani</td>
+      <td >Intermediate</td>
+      <td><img src="" th:src="@{'/img/python.png'}" class="my_profile_picture" ></td>
+   <!--   <td><video width="350" height="250" controls><source src="" th:src="@{'/img/yog.mp4'}" / >Mark</td>-->
+ <!--     <td><video width="350" height="250" controls><source src="" th:src="@{'/img/yog.mp4'}" / >Mark</td>-->
+ 
+  
+      <td >29/04/2023</td>      
+
+
+     
+      <td><a href="Python.html"  class="btn btn-success btn-sm">Enroll Here</a>
+
+
+
+</td>
+    </tr>
+     </thead>
+  <tbody>
+    <tbody>
+      <tr >
+<th scope="row" >LA304</td>
+      <td >C Language</td>
+      <td >Mike Dane</td>
+      <td >Beginner</td>
+      <td><img src="" th:src="@{'/img/c.jpg'}"   class="my_profile_picture" ></td>
+   <!--   <td><video width="350" height="250" controls><source src="'/img/yog.mp4'" th:src="@{'/img/yog.mp4'}" / >Mark</td>-->
+ <!--     <td><video width="350" height="250" controls><source src="" th:src="@{'/img/yog.mp4'}" / >Mark</td>-->
+ 
+  
+      <td >10/05/2023</td>      
+
+
+     
+      <td><a href="C.html"  class="btn btn-success btn-sm">Enroll Here</a>
+
+
+
+</td>
+    </tr>
+     </thead>
+  <tbody>
+    <tbody>
+      <tr >
+<th scope="row" >LA305</td>
+      <td >HTML </td>
+      <td >Haris Ali Khan</td>
+      <td >Beginner</td>
+      <td><img src="" th:src="@{'/img/html.jpg'}"  class="my_profile_picture" ></td>
+   <!--   <td><video width="350" height="250" controls><source src="" th:src="@{'/img/yog.mp4'}" / >Mark</td>-->
+ <!--     <td><video width="350" height="250" controls><source src="" th:src="@{'/img/yog.mp4'}" / >Mark</td>-->
+ 
+  
+      <td >04/05/2023</td>      
+
+
+     
+      <td><a href="HTML.html"  class="btn btn-success btn-sm">Enroll Here</a>
+
+
+
+</td>
+    </tr>
+     </thead>
+  <tbody>
+    <tbody>
+      <tr >
+<th scope="row" >LA306</td>
+      <td >CSS</td>
+      <td >Vinod Bahadur Thapa</td>
+      <td >Beginner</td>
+      <td><img src="" th:src="@{'/img/css.jpg'}" class="my_profile_picture" ></td>
+   <!--   <td><video width="350" height="250" controls><source src="" th:src="@{'/img/yog.mp4'}" / >Mark</td>-->
+ <!--     <td><video width="350" height="250" controls><source src="" th:src="@{'/img/yog.mp4'}" / >Mark</td>-->
+ 
+  
+      <td >06/05/2023</td>      
+
+
+     
+      <td><a href="CSS.html"  class="btn btn-success btn-sm">Enroll Here</a>
+
+
+
+</td>
+    </tr>
+     </thead>
+  <tbody>
+    <tbody>
+      <tr >
+<th scope="row" >LA307</td>
+      <td >JAVA</td>
+      <td >Shradha Khapra</td>
+      <td >Beginner</td>
+      <td><img src="" th:src="@{'/img/JAVA.jpg'}"  class="my_profile_picture" ></td>
+   <!--   <td><video width="350" height="250" controls><source src="" th:src="@{'/img/yog.mp4'}" / >Mark</td>-->
+ <!--     <td><video width="350" height="250" controls><source src="" th:src="@{'/img/yog.mp4'}" / >Mark</td>-->
+ 
+  
+      <td >06/05/2023</td>      
+
+
+     
+      <td><a href="Java.html"  class="btn btn-success btn-sm">Enroll Here</a>
+
+
+
+</td>
+    </tr>
+     </thead>
+  <tbody>
+    <tbody>
+      <tr >
+<th scope="row" >LA308</td>
+      <td >AI</td>
+      <td >Mark White</td>
+      <td >Beginner</td>
+      <td><img src="" th:src="@{'/img/ai.jpg'}"  class="my_profile_picture" ></td>
+   <!--   <td><video width="350" height="250" controls><source src="" th:src="@{'/img/yog.mp4'}" / >Mark</td>-->
+ <!--     <td><video width="350" height="250" controls><source src="" th:src="@{'/img/yog.mp4'}" / >Mark</td>-->
+ 
+  
+      <td >05/05/2023</td>      
+
+
+     
+      <td><a href="AI.html"  class="btn btn-success btn-sm">Enroll Here</a>
+
+
+
+</td>
+    </tr>
+     </thead>
+  <tbody>
+
+</div>
+</div>
+</section>
+</body>
+</html>   
